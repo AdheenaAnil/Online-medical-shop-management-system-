@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+    <style>
+
+        /* Add CSS styles for flex container and items */
+
+        .product-list {
+
+            /* display: flex;
+
+            flex-wrap: wrap; /* Allow items to wrap to the next row if necessary */
+
+            /* justify-content: space-between; Space items evenly along the main axis */
+
+            /* list-style: none; Remove list styles */
+
+            /* padding: 0; */ 
+            max-width: 1200px;
+            margin: 20px ;
+            padding: 20px;
+
+        }
+ 
+
+        .product-item {
+
+             
+
+            /* flex: 1; /* Grow to fill available space evenly */
+
+            /* max-width: 20%;Limit item width to avoid overcrowding */
+
+            /* margin: 10px; Add spacing between items */
+
+            /* border: 1px grey; Add a border for visual separation */
+
+            /* padding: auto; */
+
+            /* text-align: center; */
+            /* background-color: cornsilk; */ 
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            justify-content: space-between;
+            align-items: flex-start;
+
+        }
+        .product-info{
+           flex-grow: 1; 
+        }
+ 
+
+
+        body{
+            background-color: #f4f4f4;
+        }
+        p{
+            font-size: medium;
+            font-style:bold;
+        }
+        .quantity-button {
+        font-size: 20px;
+        padding:10px 20px;
+        /* background-color: #3498db; */
+        color: black;
+        border: none;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        position: absolute;
+        top: auto;
+        right:30px;
+        cursor: pointer;
+        height:auto;
+        text-decoration: none;
+
+
+    }
+    .quantity-container{
+        /* text-align: right; */
+        position: relative;
+    }
+  .remove-button{
+    margin-top:5px;
+    color:black;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+    height:auto;
+  }
+a{
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 16px;
+}
+.text-style {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 16px;
+}
+p{
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 20px;
+}
+h1{
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: xx-large;
+
+    }
+
+
+    </style>
+</head>
+<body>
+
+    <h1><center>Your Shopping Cart</center></h1>
+    <div class="product-list">
+    {% for item in cart_items %}
+    <div class="product-item">
+        <p>{{ item.product.name }} ({{ item.quantity }})</p>
+        <p>Price: ${{ item.product.price }}</p>
+        <div class="quantity-container">
+            <button class="quantity-button"><a href="{% url 'userapp:increment_quantity' item.id %}" >+</a></button><br><br><br>
+            <button class="quantity-button"><a href="{% url 'userapp:decrement_quantity' item.id %}" >-</a></button><br>
+            <button class="remove-button"><a href="{% url 'userapp:remove_from_cart' item.id %}">Remove</a></button>
+        </div>
+    
+    </div>
+    <br>
+    {% empty %}
+    <center><p>Your cart is empty.</p></center>
+    {% endfor %}
+    </div>
+    <center><p>Total Price: ${{ total_price }}</p>
+        <!-- <a href="../paymentpage">Paynow</a><br> -->
+    <a href="{% url 'userapp:purchase' %}">Proceed to pay</a><br><br>
+    <a href="{% url 'userapp:product_list' %}">Continue Shopping</a><br><br>
+    <a href="{% url 'userapp:contact' %}">Contact Us</a></center>
+</body>
+</html>

@@ -1,0 +1,149 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product List</title>
+  <!-- <link rel="stylesheet" href="{% static 'css/register.css' %}"> -->
+
+  <style>
+    h3{
+      font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      color: whitesmoke;
+    }
+    p{
+      color: whitesmoke;
+    }
+    img{
+        width: 100%;
+        height: 100%;
+        opacity: 0.5;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      /* background-color:lightgray; */
+      font-size: x-large;
+      background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url("{% static 'images/img2.jpg' %}");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      /* display: flex; */
+    }
+
+    /* .product-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      padding: 20px;
+    }
+
+    .product-card {
+      width: 200px;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      margin: 10px;
+      padding: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    } */
+
+    /* Add additional styling for product details, images, etc. */
+    /* body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+} */
+
+.search-container {
+  display: flex;
+  align-items: center;
+}
+
+.fa-search {
+  margin-right: 8px;
+  color:black; /* Adjust the color of the search icon */
+}
+
+.search-input {
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.search-button {
+  padding: 8px 12px;
+  font-size: 16px;
+  margin-left: 8px;
+  background-color:whitesmoke;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.search-button:hover {
+  background-color:darkslateblue;
+}
+a{
+  color:black;
+  
+}
+footer{
+  color: whitesmoke;
+  text-align: center;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  font-size:medium;
+
+}
+a{
+  text-decoration: none;
+}
+.logout{
+  color:white;
+  font-size:medium;
+
+}
+
+  </style>
+</head>
+<body>
+  <center>
+  <div class="search-container">
+    <i class="fas fa-search"></i>
+  <!-- <form class="d-flex" role="search"> -->
+    <!-- <input class="form-control me-2" type="search" placeholder="Search:" aria-label="Search">
+    <button class="btn btn-outline-success" type="submit"><a href="product_list">Search</a></button> -->
+    <input type="text" class="search-input" placeholder="Search...">
+    <button class="search-button"><a href="product_list">Search</a></button>
+  <!-- </form> -->
+  </div>
+  
+
+<!-- <div class="product-container"> -->
+  <!-- Repeat this product-card section for each item -->
+  <!-- <div class="product-card"> -->
+    <!-- <img src="{% static 'images/bharat1.jpg' %}" class="d-block w-100" alt="..."> -->
+    <h3>Bharath Medical Stores</h3>
+    <p>Location: Edappally Toll, Nethaji Nagar, Edappally, Ernakulam, Kerala 606824<br>
+        Hours: Open 9:00am ⋅ Closes 10:30 pm</p>
+    <button><a href="product_list">Medicines Available</a></button><br>
+    <a class="logout" href="logout_view">Logout</a>
+    <footer>
+      <p>&copy; 2023 PHARMACY.All Rights Reserved</p>
+    </footer>
+</center>
+</body>
+</html>
+

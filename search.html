@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Product Catalog</title>
+
+    <style>
+
+        /* Add CSS styles for flex container and items */
+
+        .product-list {
+            max-width: 1200px;
+            margin: 20px ;
+            padding: 20px;
+
+        }
+ 
+
+        .product-item {
+           
+
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            justify-content: space-between;
+            align-items: flex-start;
+
+
+        }
+        .product-info{
+            flex-grow: 1;
+        }
+ 
+
+        /* Style the "Buy Now" button */
+        .product_title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .product_description {
+            margin-bottom: 10px;
+        }
+
+        .product_price {
+            font-size: 18px;
+            color: #e44d26; /* Flipkart's primary color */
+            margin-bottom: 10px;
+        }
+
+        .buy-now-button {
+/* 
+            display: block;
+
+            margin-top: 10px;
+
+            background-color:darkslateblue;
+
+            color: #fff;
+
+            text-decoration: none;
+
+            padding: 5px 10px;
+
+            border-radius: 5px; */
+            background-color:darkslateblue;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 4px;
+
+        }
+        body{
+            background-color:lightgray ;
+        }
+        h1{
+            font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-size: xx-large;
+
+        }
+        
+        .search {
+  display: flex;
+  align-items: center;
+}
+
+.fa-search {
+  margin-right: 8px;
+  color: #555; /* Adjust the color of the search icon */
+}
+
+.search-input {
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.search-button {
+  padding: 8px 12px;
+  font-size: 16px;
+  margin-left: 8px;
+  background-color:darkslateblue;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.search-button:hover {
+  background-color:darkslateblue;
+}
+a{
+    text-decoration: none;
+}
+    </style>
+
+</head>
+
+<body>
+
+    <h1><center>MEDICINES</center></h1>
+    <!-- <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search Medicines here...." aria-label="Search">
+        <button class="btn btn-outline-success" type="submit"><a href="">Search</a></button>
+    </form> -->
+    <div class="search">
+        <form method="get" action="search/">
+            <i class="fas fa-search"></i>
+            <input type="search"class="search-input" name="query" placeholder="search...">
+            <button class="search-button">Search</button></form>
+        </form>
+    </div>
+    <!-- <h1 class="text-2xl">Search</h1> -->
+    <h2 class="text-xs text-gray-600">Search results for"{{ query }}":</h2>
+    {% if products %}
+        <div class="product-list">
+            {% for product in products %}
+
+                <div class="product-item">
+                    <div class="product-info">
+
+                    <!-- <img src="{{ product.image.url }}" alt="{{ product.name }}" width="200" height="150"> -->
+
+                    <div class="product_title">{{product.name}}</div>
+
+                    <div class="product_description">{{product.description}}</div>
+
+                    <div class="product_price">Price:${{product.price}}</div><br>
+
+
+                    <a class="buy-now-button" href="{% url 'userapp:add_to_cart' product.id %}">Add to Cart</a>
+                    <!-- <form method="post" action="{% url 'userapp:add_to_cart' product.id %}" method="GET">
+                    {% csrf_token %}
+                    {{ form }}
+                    <button type="submit">Search</button>
+                    </form>
+                    {% if results %}
+                        <h2>Search Results:</h2>
+                        <ul>
+                            {% for result in results %}
+                            <li>{{ result.title }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %} -->
+
+                    </div>
+                </div>
+                <br><br>
+
+            {% endfor %}
+            
+            
+        </div>
+
+                
+    {% else %}
+    <p>There are no medicines matching!!</p>
+    {% endif %}
+
+</body>
+</html>
+<!-- search bar for python project html and python code -->

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+              background-color:whitesmoke ;     
+             }
+           thead{
+              background-color: green;
+          }
+          td,th{
+              background-color:cadetblue;
+              color: azure;
+              padding: 10px 15px;
+              text-align: center;
+          }
+  </style>
+  
+</head>
+<body>
+    <center>
+        <table>
+            <thead>
+            <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Address</th>
+
+            <!-- <th>payment-status</th> -->
+            </tr>
+            </thead>
+           
+            {% for ls in data %}
+            <tr>
+                <td>{{ls.name}}</td>
+                <td>{{ls.email}}</td>
+                <td>{{ls.address}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        </center>
+</body>
+</html>

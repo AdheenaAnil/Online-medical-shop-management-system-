@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    .shadow {
+  box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
+  background-color:yellow;
+  font-weight: bold;
+  font-size: 16px; 
+}
+h5{
+    font-weight: bold;
+    font-size: 16px;
+
+}
+</style>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body><center>
+<div style="align-items:center;height:900px;width:350px;">
+    <from action="#" method="post">
+        <h5>Amount :{{request.session.amont_cart}}</h5>
+
+    </from>
+    <a href='payment_page' class="shadow" Style="width:100%">Pay now</a>
+</div></center>
+
+
+</body>
+</html>

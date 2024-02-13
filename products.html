@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .form {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+        textarea{
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+<body>
+    <center>
+        <div class="form">
+        <form action="products" method="post">
+            {% csrf_token %}
+            <h1>Medicines</h1>         
+            <input type="text" placeholder="Medicines" name="name" required>
+            <textarea type="text" placeholder="Description" name="description" required></textarea>
+            <input type="number" placeholder="Price" name="price" required>
+            <button type="submit">submit</button>
+        </form>
+        </div>
+        </center>
+</body>
+</html>

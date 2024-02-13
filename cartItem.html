@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+      body{
+            background-color:whitesmoke ;     
+           }
+         thead{
+            background-color: green;
+        }
+        td,th{
+            background-color:cadetblue;
+            color: azure;
+            padding: 10px 15px;
+            text-align: center;
+        }
+</style>
+<body>
+    <center>
+    <table>
+        <thead>
+        <tr>
+        <th>Medicines</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <!-- <th>payment-status</th> -->
+        </tr>
+        </thead>
+        {% for item in cart_items %}
+        <tr>
+            <td>{{ item.product.name }} </td>
+            <td>({{ item.quantity }})</td>
+            <td> ${{ item.product.price }}</td>
+            <!-- <td><button>{{item_id}}</button></td> -->
+        </tr>
+        {% endfor %}
+    </table>
+    </center>
+</body>
+</html>

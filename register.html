@@ -1,0 +1,114 @@
+<!-- {% load static %} -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <!-- <link rel="stylesheet" href="{% static 'css/register.css' %}"> -->
+
+    <style>
+        body{
+        margin: 0;
+	    padding: 0;
+	    display: flex;
+	    justify-content: center;
+	    align-items: center;
+	    min-height: 100vh;
+	    font-family: 'Jost', sans-serif;
+	    /* background: linear-gradient(to bottom, white, #302b63, #24243e); */
+		background-color: lightblue;
+		border: white;
+
+        }
+     .form{
+        width: 350px;
+	    height: 600px;
+	    background:lightblue;
+	    overflow: hidden;
+	    /* background: url("https://doc-08-2c-docs.googleusercontent.com/docs/securesc/68c90smiglihng9534mvqmq1946dmis5/fo0picsp1nhiucmc0l25s29respgpr4j/1631524275000/03522360960922298374/03522360960922298374/1Sx0jhdpEpnNIydS4rnN4kHSJtU1EyWka?e=view&authuser=0&nonce=gcrocepgbb17m&user=03522360960922298374&hash=tfhgbs86ka6divo3llbvp93mg4csvb38") no-repeat center/ cover; */
+	    border-radius: 10px;
+	    box-shadow: 5px 20px 50px #000;
+  
+     }   
+     input{
+	width: 60%;
+	height: 20px;
+	background: #e0dede;
+	justify-content: center;
+	display: flex;
+	margin: 35px auto;
+	padding:10px;
+	border: none;
+	outline: none;
+	border-radius: 5px;
+     }
+     button{
+	width: 60%;
+	height: 40px;
+	margin: 20px auto;
+	justify-content: center;
+	display: block;
+	color: #fff;
+	/* background: #573b8a; */
+	background: rgb(101, 164, 204);
+	font-size: 1em;
+	font-weight: bold;
+	margin-top: 20px;
+	outline: none;
+	border: none;
+	border-radius: 5px;
+	transition: .2s ease-in;
+	cursor: pointer;
+}
+button:hover{
+	/* background: #6d44b8; */
+	background: lightskyblue;
+}
+label{
+	color: #fff;
+}
+h1{
+    /* color: rgb(139, 135, 135); */
+	color: #000;
+}
+
+    </style>
+	<script type="text/javascript">
+		function validateform(){
+			var Name=document.f1.nm.value;
+			var mobile=document.f1.mb.value;
+			var email=document.f1.em.value;
+			// var password=document.f1.ps.value;
+			var firstpassword=document.f1.ps1.value;
+			var secondpassword=document.f1.ps2.value;
+			if(firstpassword!=secondpassword){
+				alert("Password must be Same..")
+				return false;
+			}
+		    if (ps.length<6){
+			alert("Password must be atleast 6 characters long");
+			return false;
+		    }
+	    }
+	    
+	</script>
+</head>
+<body>
+    <center>
+    <div class="form">
+    <form name="f1" action="register" method="post">
+        {% csrf_token %}
+        <h1>REGISTRATION</h1>
+		<input type="text" placeholder="Name" name="nm" required>
+        <input type="number" placeholder="Mobile" name="mb" required>
+        <input type="email" placeholder="Email" name="em" required>
+        <input type="password" placeholder="Password" name="ps1" required>
+		<input type="password" placeholder="Re-enter password" name="ps2" required>
+		<button type="submit"onclick="return validateform()">Register</button>
+		
+    </form>
+    </div>
+    </center>
+</body>
+</html>

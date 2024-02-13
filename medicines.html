@@ -1,0 +1,260 @@
+<!-- {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">
+
+    <style>
+        h1{
+            color: purple;
+            background-color:antiquewhite;
+
+        }
+        
+        body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 0;
+          background-color: #f4f4f4;
+        }
+    
+        .medicine-container {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-around;
+          padding: 20px;
+        }
+    
+        .medicine-card {
+          width: 200px;
+          background-color: #fff;
+          border: 1px solid #ddd;
+          border-radius: 8px;
+          margin: 10px;
+          padding: 10px;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        } -->
+        <!-- /* .product1{
+          padding:20px;
+          width:100px;
+          height:100px;
+
+
+        }
+     */
+        /* Add additional styling for product details, images, etc. */
+     -->
+      <!-- /* </style>
+    <script src="" type="text/javascript"></script>
+</head>
+<body>
+    <h1><center>Medicines Available Are.....</center></h1>
+    <div class="medicine-container">
+        Repeat this product-card section for each item -->
+        <!-- <div class="product1">
+          <h4 class="product1">Amoxilin 500mg</h4>
+          <h5 class="product1">Brand Name:Amoxilin Trimox</h5><br>
+           <h5 class="product1">Use:Bacterial infections</h5> <br>
+            <p class="product1">Price:$73.47 (10 Capsule(s) in Strip)</p>
+            <form action="" method="post">
+              {% csrf_token %}       
+              <button onclick="" class="product1">Add to Cart</button>
+            </form>
+            </div>
+            <div class="product2">
+            <h4 class="product2">Paracetamol Tablets 500mg</h4>
+            <h5 class="product2">Brand Name:Acetaminophen, Tylenol, or Panadol </h5><br>
+            <h5 class="product2">Use:For Pain Relief and Analgesics</h5> <br>
+            <p class="product2">Price:$30 per strip</p>
+            <form action="" method="post">
+              {% csrf_token %}       
+              <button onclick="" class="">Add to Cart</button>
+            </form>
+
+            </div>
+        
+         <div class="cart">
+            <h2>Booking Cart</h2>
+            <ul id="cart-items"></ul>
+        </div>
+        
+</body>
+</html> */ --> 
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicine Details</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+    <h2><center>Medicine Details</center></h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Medicine Name</th>
+                <th>Uses</th>
+                <th>Price</th>
+                <th>Booking</th>
+            </tr>
+        </thead>
+        <tbody>
+             Example Medicine Details -->
+            <!-- <tr>
+                <td>Amoxilin 500mg</td>
+                <td>Bacterial infections</td>
+                <td>$73.47 per strip</td>
+                <td><button type="submit">Add to Cart</button></td>
+            </tr>
+            <tr>
+                <td>Paracetamol Tablets 500mg</td>
+                <td</td>
+                <td>$30 per stri>For Pain Relief and Analgesicsp</td>
+                <td><button type="submit">Add to Cart</button></td>
+            </tr> -->
+            <!-- Add more rows as needed -->
+        <!-- </tbody>
+    </table>
+
+</body>
+</html>  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicine Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .product-details {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .product-image {
+            max-width: 400px;
+            margin-right: 20px;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: auto;
+        }
+
+        .product-info {
+            flex-grow: 1;
+        }
+
+        .product-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .product-description {
+            margin-bottom: 20px;
+        }
+
+        .product-price {
+            font-size: 18px;
+            color: #e44d26; /* Flipkart's primary color */
+            margin-bottom: 20px;
+        }
+
+        .buy-now-btn {
+            background-color: #e44d26;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 4px;
+        }
+        .add-cart-btn {
+            background-color: #e44d26;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="product-details">
+            <div class="product-image">
+                <img src="{% static 'images/amoxicillin.jpg' %}" alt="Medicine Image">
+            </div>
+            <div class="product-info">
+                <div class="product-title">Medicine Name</div>
+                <div class="product-description">
+                  <h4>Amoxilin 500mg</h4>
+                    <p>Used for bacterial infections</p>
+                </div>
+                <div class="product-price">$73.47 per strip</div>
+                <button class="buy-now-btn">Buy Now</button>
+                <button class="add-cart-btn">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+        <div class="container">
+            <div class="product-details">
+              <div class="product-image">
+                <img src="{% static 'images/Paracetamol.jpg' %}" alt="Medicine Image">
+              </div>
+              <div class="product-info">
+                  <div class="product-title">Medicine Name</div>
+                  <div class="product-description">
+                    <h4>Paracetamol Tablets 500mg</h4>
+                    <p>For Pain Relief,Fever,Cold and Analgesics</p>
+                  </div>
+                <div class="product-price">$30 per strip</div>
+                <button class="buy-now-btn">Buy Now</button>
+                <button class="add-cart-btn">Add to Cart</button>
+              </div>
+            </div>
+        </div>
+
+</body>
+</html>
+

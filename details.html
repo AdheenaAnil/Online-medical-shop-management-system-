@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        thead{
+            background-color: green;
+        }
+        td,th{
+            background-color:cadetblue;
+            color: azure;
+            padding: 10px 15px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <form action="" method="post">
+        {% csrf_token %}
+        <table>
+            <thead>
+                <th>NAME</th>
+                <th>MOBILE</th>
+                <th>EMAIL</th>
+                <th>PASSWORD</th>
+                <th>EDIT</th>
+                <th>UPDATE</th>
+            </thead>
+            <tbody>
+                {% for ls in data %}
+                <tr>
+                    <td>{{ls.name}}</td>
+                    <td>{{ls.mobile}}</td>
+                    <td>{{ls.email}}</td>
+                    <td>{{ls.password}}</td>
+                    <td><button><a href="/edit?idn={{ls.id}}">Edit</a></button></td>
+                    <td><button><a href="/delete?idn={{ls.id}}">Delete</a></button></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </form>
+</body>
+</html>

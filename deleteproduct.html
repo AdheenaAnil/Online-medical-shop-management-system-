@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=ta, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color:whitesmoke ;     
+           }
+         thead{
+            background-color: green;
+        }
+        td,th{
+            background-color:cadetblue;
+            color: azure;
+            padding: 10px 15px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <center>
+    <table>
+        <thead>
+        <tr>
+        <th>Medicines</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Action</th>
+        </tr>
+        </thead>
+        {% for product in products %}
+        <tr>
+            <td>{{product.name}}</td>
+            <td>{{product.description}}</td>
+            <td>{{product.price}}</td>
+            <td><button><a href="deleteproduct/{{product.name}}">Delete</a></button></td>
+        </tr>
+        {% endfor %}
+    </table>
+    </center>
+</body>
+</html>
